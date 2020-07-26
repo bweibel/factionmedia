@@ -4,5 +4,11 @@
     "name": "Faction Media",
     "author": "Ben Weibel",
     "PHPNamespace": "WP_Rig\\WP_Rig"
+  },
+  "dev": {
+    "browserSync": {
+      "live": true,
+      "proxyURL": "localhost:8000"
+    }
   }
 }
