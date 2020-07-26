@@ -1,1 +1,8 @@
-{}
+{
+  "theme": {
+    "slug": "faction-media",
+    "name": "Faction Media",
+    "author": "Ben Weibel",
+    "PHPNamespace": "WP_Rig\\WP_Rig"
+  }
+}
