@@ -201,13 +201,14 @@ select {
 # Header
 --------------------------------------------------------------*/
 .site-header {
-	padding: 0 .5em;
+	padding: 0 0.5em;
 	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: 20;
 	background-color: rgba(0, 0, 0, 0.8);
 	display: flex;
+	justify-content: space-between;
 	color: var(--color-theme-white);
 }
 
@@ -216,8 +217,9 @@ select {
 }
 
 @media (--wide-menu-query) {
+
 	.site-header {
-	background: red;
+		background: red;
 	}
 }
 
@@ -239,7 +241,9 @@ select {
 .custom-logo-link {
 	display: inline-block;
 	margin: 0;
-	/* max-width: ; */
+	max-width: 5em;
+	z-index: 20;
+	position: relative;
 }
 
 .site-branding {
@@ -278,7 +282,7 @@ select {
 --------------------------------------------------------------*/
 .nav--toggle-small .menu-toggle {
 	display: block;
-	padding: .5em;
+	padding: 0.5em;
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
 	font-size: 80%;
@@ -306,21 +310,17 @@ select {
 		display: block;
 	}
 
-	.nav--toggle-small.nav--toggled-on .primary-menu-container{
-		background: rgba(0, 0, 0, 0);
-		transition: background .25s ease-out;
-	}
-
 	.nav--toggle-small.nav--toggled-on .primary-menu-container {
+		transition: background 0.25s ease-out;
 		position: absolute;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
 		height: 100vh;
-		width: 100vh;
+		width: 100%;
 		padding: 1em;
-		background: rgba(0, 0, 0, 0.6);
+		background: var(--color-faction-purple-transparent);
 	}
 }
 
@@ -427,8 +427,6 @@ select {
 --------------------------------------------------------------*/
 .main-navigation {
 	clear: both;
-	/* display: block; */
-	padding: 0 1em;
 	max-width: var(--content-width);
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
@@ -438,6 +436,8 @@ select {
 
 .main-navigation a {
 	display: block;
+	font-weight: bold;
+	text-transform: uppercase;
 	width: 100%;
 	padding: 0.5em 1em 0.5em 0;
 	text-decoration: none;
@@ -453,7 +453,7 @@ select {
 	display: block;
 	list-style: none;
 	margin: 0;
-	padding: 0;
+	padding: 1.5rem 0 0;
 }
 
 .main-navigation ul ul li {
