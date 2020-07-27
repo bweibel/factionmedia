@@ -1,0 +1,59 @@
+@import "_custom-properties.css";
+
+/*--------------------------------------------------------------
+# Icons
+--------------------------------------------------------------*/
+.icon {
+
+}
+
+.icon.hamburger {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 24px;
+}
+
+.hamburger-inner {
+    top: 50%;
+    display: block;
+    margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-theme-white);
+}
+
+.hamburger-inner:before,
+.hamburger-inner:after {
+  content: '';
+  display: block;
+  transition: top ease-in .1s, opacity ease-in .2s;
+}
+
+.hamburger-inner:before {
+  top: 10px;
+}
+
+.hamburger-inner:after {
+  top: -10px;
+}
+
+.nav--toggled-on .hamburger-inner {  
+
+}
+
+.nav--toggled-on .hamburger-inner:before {  
+  opacity: 0;
+  top: 0;
+}
+
+.nav--toggled-on .hamburger-inner:after {  
+  opacity: 0;
+  top: 0;
+}

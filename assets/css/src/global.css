@@ -7,6 +7,7 @@
 	# Typography
 	# Elements
 	# Links
+	# Icons
 # Accessibility
 # Layout
 # Forms
@@ -25,6 +26,7 @@
 @import "_typography.css";
 @import "_elements.css";
 @import "_links.css";
+@import "_icons.css";
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -74,11 +76,12 @@
 .site {
 	margin: 0 auto;
 	max-width: 100%;
+	position: relative;
 }
 
-@media (--sidebar-query) {
+@media (--large-window-query) {
 
-	.has-sidebar .site {
+	/* .has-sidebar .site {
 		margin: 0 1em;
 		display: grid;
 		grid-template-columns: 3fr 1fr;
@@ -102,7 +105,7 @@
 
 	.site-footer {
 		grid-column: span 2;
-	}
+	} */
 }
 
 /*--------------------------------------------------------------
@@ -197,9 +200,31 @@ select {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-
 .site-header {
-	padding-bottom: 1em;
+	padding: 0 .5em;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 20;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: flex;
+	color: var(--color-theme-white);
+}
+
+.admin-bar .site-header {
+	top: 50px;
+}
+
+@media (--wide-menu-query) {
+	.site-header {
+	background: red;
+	}
+}
+
+@media (--large-window-query){
+	.site-header {
+		background: blue;
+	}
 }
 
 .header-image {
@@ -213,12 +238,13 @@ select {
 
 .custom-logo-link {
 	display: inline-block;
-	margin: 0 auto 1em;
+	margin: 0;
+	/* max-width: ; */
 }
 
 .site-branding {
 	text-align: center;
-	padding: 60px 0 1.75em;
+	padding: 10px 0 10px;
 }
 
 .site-title {
@@ -252,15 +278,17 @@ select {
 --------------------------------------------------------------*/
 .nav--toggle-small .menu-toggle {
 	display: block;
-	margin: 1.2em auto;
-	padding: 0.6em 1.2em 0.5em;
+	padding: .5em;
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
 	font-size: 80%;
 	text-transform: uppercase;
-	border: 2px solid #000;
+	border: none;
 	border-radius: 0;
 	background: transparent;
+	color: var(--color-theme-white);
+	position: relative;
+	z-index: 20;
 }
 
 .nav--toggle-small .menu {
@@ -276,6 +304,23 @@ select {
 
 	.nav--toggle-small.nav--toggled-on .menu {
 		display: block;
+	}
+
+	.nav--toggle-small.nav--toggled-on .primary-menu-container{
+		background: rgba(0, 0, 0, 0);
+		transition: background .25s ease-out;
+	}
+
+	.nav--toggle-small.nav--toggled-on .primary-menu-container {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		height: 100vh;
+		width: 100vh;
+		padding: 1em;
+		background: rgba(0, 0, 0, 0.6);
 	}
 }
 
@@ -382,12 +427,13 @@ select {
 --------------------------------------------------------------*/
 .main-navigation {
 	clear: both;
-	display: block;
-	margin: 0 auto 2em;
+	/* display: block; */
 	padding: 0 1em;
 	max-width: var(--content-width);
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
+	display: flex;
+	align-items: center;
 }
 
 .main-navigation a {
@@ -395,7 +441,7 @@ select {
 	width: 100%;
 	padding: 0.5em 1em 0.5em 0;
 	text-decoration: none;
-	color: #000;
+	color: var(--color-theme-white);
 }
 
 .main-navigation a:hover,

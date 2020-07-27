@@ -46,7 +46,10 @@ if ( ! wp_rig()->is_primary_nav_menu_active() ) {
 		}
 		?>
 	>
-		<?php esc_html_e( 'Menu', 'wp-rig' ); ?>
+		<!-- <?php esc_html_e( 'Menu', 'wp-rig' ); ?> -->
+		<div class="icon hamburger">
+			<div class="hamburger-inner"></div>
+		</div>
 	</button>
 
 	<div class="primary-menu-container">
