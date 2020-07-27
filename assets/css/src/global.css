@@ -569,6 +569,8 @@ select {
 .site-footer {
 	margin: 1em 0 0;
 	padding: 2em 0;
+	color: var(--color-theme-white);
+	background-color: var(--color-theme-primary);
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
 }
