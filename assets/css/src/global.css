@@ -206,10 +206,8 @@ select {
 	top: 0;
 	width: 100%;
 	z-index: 20;
-	background-color: rgba(0, 0, 0, 0.8);
 	display: flex;
 	justify-content: space-between;
-	color: var(--color-theme-white);
 }
 
 .admin-bar .site-header {
@@ -607,6 +605,31 @@ select {
 
 .pagination .current {
 	border-color: var(--global-font-color);
+}
+
+/*--------------------------------------------------------------
+# Video Hero
+--------------------------------------------------------------*/
+.video-hero {
+	min-width: 100%;
+	min-height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: -1;
+}
+
+.video-hero::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: #000;
+	opacity: .7;
 }
 
 /*--------------------------------------------------------------

@@ -19,11 +19,12 @@
 	--color-theme-secondary: var(--color-faction-brightpurple);
 	--color-faction-purple: #4f1b7c;
 	--color-faction-brightpurple: #9b57e1;
-	--color-theme-black: #181818;
+	--color-theme-black: rgb(24, 24, 24);
 	--color-theme-grey: #95a5a6;
 	--color-theme-white: #ecf0f1;
 
 	--color-faction-purple-transparent: rgba(79, 27, 124, 0.95);
+	--color-faction-black-transparent: rgba(24, 24, 24, 0.95);
 
 
 	--color-link: #0073aa;
