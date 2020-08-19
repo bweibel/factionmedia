@@ -18,8 +18,8 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 	<main id="primary" class="site-main">
 		<?php
 		while ( have_posts() ) {
-			get_template_part( 'template-parts/content/video_hero');
 			the_post();
+			get_template_part( 'template-parts/content/video_hero');
 			get_template_part( 'template-parts/content/entry', get_post_type() );
 		}
 

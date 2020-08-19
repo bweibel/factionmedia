@@ -7,13 +7,47 @@
 
 namespace WP_Rig\WP_Rig;
 
+wp_enqueue_script( 'wp-rig-herovideo-script' );
+
+function printVideoHTML( ) {
+
+  $videoPostId = get_field('hero_video');
+  $videoPostType = get_field('video_type', $videoPostId);
+
+  switch ($videoPostType){
+    case 'file':
+      get_template_part( 'template-parts/video/hero', 'file' );
+      break;
+    case 'vimeo':
+      get_template_part( 'template-parts/video/hero', 'vimeo');
+      break;
+    case 'youtube':
+      get_template_part( 'template-parts/video/hero', 'youtube');
+      break;
+
+    }
+}
+
+//
+$hasHero = boolval( get_field('has_hero_video') );
 ?>
 
-<section class="video-hero">
-  <!-- <div class="overlay">
-  </div> -->
-  <div class="video-wrapper" style="padding:56.25% 0 0 0;position:relative;">
-    <iframe src="https://player.vimeo.com/video/385736203?autoplay=1&loop=1&title=0&byline=0&portrait=0&background=1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" autoplay="true" allowfullscreen></iframe>
-  </div>
-  <script src="https://player.vimeo.com/api/player.js"></script>
-</section><!-- .video-background -->
+<?php if ($hasHero): ?>
+
+  <section id="video-hero" class="video-hero">
+    <div class="video-wrapper">
+      <?php printVideoHTML(); ?>
+    </div>
+  </section><!-- .video-background -->
+  <section class="hero-overlay">
+  <?php the_field('overlay'); ?>
+  </section>
+
+<?php endif; ?>
+
+
+
+
+
+    
+

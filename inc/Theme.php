@@ -153,6 +153,7 @@ class Theme {
 			new Customizer\Component(),
 			new Styles\Component(),
 			new Remove_Comments\Component(),
+			new Scripts\Component(),
 		];
 
 		if ( defined( 'JETPACK__VERSION' ) ) {

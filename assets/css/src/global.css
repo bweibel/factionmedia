@@ -79,6 +79,10 @@
 	position: relative;
 }
 
+.site-main {
+	min-height: 100vh;
+}
+
 @media (--large-window-query) {
 
 	/* .has-sidebar .site {
@@ -217,13 +221,13 @@ select {
 @media (--wide-menu-query) {
 
 	.site-header {
-		background: red;
+		/* background: red; */
 	}
 }
 
 @media (--large-window-query){
 	.site-header {
-		background: blue;
+		/* background: blue; */
 	}
 }
 
@@ -608,12 +612,30 @@ select {
 }
 
 /*--------------------------------------------------------------
+# Hero
+--------------------------------------------------------------*/
+.hero-overlay {
+	min-height: 90vh;
+	margin-top: 20vh;
+	padding: 10rem 2rem;
+	color: #fff;
+	font-size: var(--font-size-larger);
+}
+
+/*--------------------------------------------------------------
+# Image Hero
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
 # Video Hero
 --------------------------------------------------------------*/
 .video-hero {
 	min-width: 100%;
 	min-height: 100vh;
 	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-content: center;
 	top: 0;
 	left: 0;
 	bottom: 0;
@@ -631,6 +653,12 @@ select {
 	background: #000;
 	opacity: .7;
 }
+
+.video-wrapper video {
+	min-width: 100vw;
+	min-height: 100vh;
+}
+
 
 /*--------------------------------------------------------------
 # Footer
